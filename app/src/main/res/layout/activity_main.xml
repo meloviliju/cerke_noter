@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/prevScoreView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="backScore"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/scoreView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/scoreView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text=""
+        android:textSize="32sp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prevScoreView"
+        app:layout_constraintBottom_toTopOf="@+id/gridButtons"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Delete"
+        android:onClick="removeScoreText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prevScoreView"
+        app:layout_constraintBottom_toTopOf="@+id/gridButtons" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Enter"
+        android:onClick="enterScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prevScoreView"
+        app:layout_constraintBottom_toTopOf="@+id/gridButtons" />
+
+    <ImageView
+        android:id="@+id/field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/field" />
+
+    <GridLayout
+        android:id="@+id/gridButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:columnCount="9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/field"
+        app:layout_constraintBottom_toBottomOf="@id/field">
+
+        <Button
+            android:id="@+id/ka"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ka" />
+
+        <Button
+            android:id="@+id/la"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="la" />
+
+        <Button
+            android:id="@+id/na"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="na" />
+
+        <Button
+            android:id="@+id/ta"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ta" />
+
+        <Button
+            android:id="@+id/za"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="za" />
+
+        <Button
+            android:id="@+id/xa"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="xa" />
+
+        <Button
+            android:id="@+id/ca"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ca" />
+
+        <Button
+            android:id="@+id/ma"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ma" />
+
+        <Button
+            android:id="@+id/pa"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="pa" />
+
+        <Button
+            android:id="@+id/ke"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ke" />
+
+        <Button
+            android:id="@+id/le"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="le" />
+
+        <Button
+            android:id="@+id/ne"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ne" />
+
+        <Button
+            android:id="@+id/te"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="te" />
+
+        <Button
+            android:id="@+id/ze"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ze" />
+
+        <Button
+            android:id="@+id/xe"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="xe" />
+
+        <Button
+            android:id="@+id/ce"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ce" />
+
+        <Button
+            android:id="@+id/me"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="me" />
+
+        <Button
+            android:id="@+id/pe"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="pe" />
+
+        <Button
+            android:id="@+id/ki"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ki" />
+
+        <Button
+            android:id="@+id/li"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="li" />
+
+        <Button
+            android:id="@+id/ni"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ni" />
+
+        <Button
+            android:id="@+id/ti"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ti" />
+
+        <Button
+            android:id="@+id/zi"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="zi" />
+
+        <Button
+            android:id="@+id/xi"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="xi" />
+
+        <Button
+            android:id="@+id/ci"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ci" />
+
+        <Button
+            android:id="@+id/mi"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="mi" />
+
+        <Button
+            android:id="@+id/pi"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="pi" />
+
+        <Button
+            android:id="@+id/ku"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ku" />
+
+        <Button
+            android:id="@+id/lu"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="lu" />
+
+        <Button
+            android:id="@+id/nu"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="nu" />
+
+        <Button
+            android:id="@+id/tu"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="tu" />
+
+        <Button
+            android:id="@+id/zu"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="zu" />
+
+        <Button
+            android:id="@+id/xu"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="xu" />
+
+        <Button
+            android:id="@+id/cu"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="cu" />
+
+        <Button
+            android:id="@+id/mu"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="mu" />
+
+        <Button
+            android:id="@+id/pu"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="pu" />
+
+        <Button
+            android:id="@+id/ko"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ko" />
+
+        <Button
+            android:id="@+id/lo"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="lo" />
+
+        <Button
+            android:id="@+id/no"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="no" />
+
+        <Button
+            android:id="@+id/to"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="to" />
+
+        <Button
+            android:id="@+id/zo"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="zo" />
+
+        <Button
+            android:id="@+id/xo"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="xo" />
+
+        <Button
+            android:id="@+id/co"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="co" />
+
+        <Button
+            android:id="@+id/mo"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="mo" />
+
+        <Button
+            android:id="@+id/po"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="po" />
+
+        <Button
+            android:id="@+id/ky"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ky" />
+
+        <Button
+            android:id="@+id/ly"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ly" />
+
+        <Button
+            android:id="@+id/ny"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ny" />
+
+        <Button
+            android:id="@+id/ty"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="ty" />
+
+        <Button
+            android:id="@+id/zy"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="zy" />
+
+        <Button
+            android:id="@+id/xy"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="xy" />
+
+        <Button
+            android:id="@+id/cy"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="cy" />
+
+        <Button
+            android:id="@+id/my"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="my" />
+
+        <Button
+            android:id="@+id/py"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="py" />
+
+        <Button
+            android:id="@+id/kai"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="kai" />
+
+        <Button
+            android:id="@+id/lai"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="lai" />
+
+        <Button
+            android:id="@+id/nai"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="nai" />
+
+        <Button
+            android:id="@+id/tai"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="tai" />
+
+        <Button
+            android:id="@+id/zai"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="zai" />
+
+        <Button
+            android:id="@+id/xai"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="xai" />
+
+        <Button
+            android:id="@+id/cai"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="cai" />
+
+        <Button
+            android:id="@+id/mai"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="mai" />
+
+        <Button
+            android:id="@+id/pai"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="pai" />
+
+        <Button
+            android:id="@+id/kau"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="kau" />
+
+        <Button
+            android:id="@+id/lau"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="lau" />
+
+        <Button
+            android:id="@+id/nau"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="nau" />
+
+        <Button
+            android:id="@+id/tau"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="tau" />
+
+        <Button
+            android:id="@+id/zau"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="zau" />
+
+        <Button
+            android:id="@+id/xau"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="xau" />
+
+        <Button
+            android:id="@+id/cau"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="cau" />
+
+        <Button
+            android:id="@+id/mau"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="mau" />
+
+        <Button
+            android:id="@+id/pau"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="pau" />
+        <Button
+            android:id="@+id/kia"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="kia" />
+
+        <Button
+            android:id="@+id/lia"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="lia" />
+
+        <Button
+            android:id="@+id/nia"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="nia" />
+
+        <Button
+            android:id="@+id/tia"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="tia" />
+
+        <Button
+            android:id="@+id/zia"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="zia" />
+
+        <Button
+            android:id="@+id/xia"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="xia" />
+
+        <Button
+            android:id="@+id/cia"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="cia" />
+
+        <Button
+            android:id="@+id/mia"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="mia" />
+
+        <Button
+            android:id="@+id/pia"
+            android:layout_width="@dimen/grid_side_length"
+            android:layout_height="@dimen/grid_side_length"
+            android:background="@color/grid_button_bgcolor"
+            android:onClick="addScoreText"
+            android:tag="pia" />
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/optionButtonBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/gridButtons"
+        app:layout_constraintBottom_toTopOf="@+id/outerPieceQueue">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Black"
+                android:onClick="addScoreText"
+                android:tag="B"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Red"
+                android:onClick="addScoreText"
+                android:tag="R" />
+        </LinearLayout>
+        <Spinner
+            android:id="@+id/judgeNumberSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/judge_number" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/outerPieceQueue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout
+            android:id="@+id/innerPieceQueue"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            app:layout_constraintBottom_toBottomOf="@+id/field">
+
+            <ImageView
+                android:id="@+id/nuak"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="V"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/bnuak" />
+            <ImageView
+                android:id="@+id/kauk"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="P"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/bkauk" />
+            <ImageView
+                android:id="@+id/gua"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="A"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/bgua" />
+            <ImageView
+                android:id="@+id/kaun"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="C"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/bkaun" />
+            <ImageView
+                android:id="@+id/dau"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="T"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/bdau" />
+            <ImageView
+                android:id="@+id/maun"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="H"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/bmaun" />
+            <ImageView
+                android:id="@+id/kua"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="O"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/bkua" />
+            <ImageView
+                android:id="@+id/tuk"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="S"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/btuk" />
+            <ImageView
+                android:id="@+id/uai"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="G"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/buai" />
+            <ImageView
+                android:id="@+id/io"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="K"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/bio" />
+            <ImageView
+                android:id="@+id/tam"
+                android:layout_width="@dimen/piece_image_side_length"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/piece_image_margin"
+                android:tag="M"
+                android:onClick="addScoreText"
+                app:srcCompat="@drawable/btam" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

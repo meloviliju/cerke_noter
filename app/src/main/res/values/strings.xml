@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Cerke Noter</string>
+
+    <string-array name="judge_number">
+        <item></item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="color_name">
+        <item></item>
+        <item>black</item>
+        <item>red</item>
+    </string-array>
+
+    <string-array name="season_name">
+        <item></item>
+        <item>spring</item>
+        <item>summer</item>
+        <item>autumn</item>
+        <item>winter</item>
+    </string-array>
+
+    <string name="dialog_title">Output score file</string>
+    <string name="dialog_message">Finish inputting score?</string>
+    <string name="ok">OK</string>
+    <string name="ng">Cancel</string>
+</resources>

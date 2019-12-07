@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/blackPlayerNameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/editText_side_margin"
+        android:layout_marginRight="@dimen/editText_side_margin"
+        android:layout_marginTop="@dimen/editText_up_and_down_margin"
+        android:layout_marginBottom="@dimen/editText_up_and_down_margin"
+        android:hint="Black player's name?"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/redPlayerNameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/editText_side_margin"
+        android:layout_marginRight="@dimen/editText_side_margin"
+        android:layout_marginTop="@dimen/editText_up_and_down_margin"
+        android:layout_marginBottom="@dimen/editText_up_and_down_margin"
+        android:hint="Red player's name?"
+        android:inputType="text" />
+
+    <Spinner
+        android:id="@+id/firstPlayerSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/editText_side_margin"
+        android:layout_marginRight="@dimen/editText_side_margin"
+        android:layout_marginTop="@dimen/editText_up_and_down_margin"
+        android:layout_marginBottom="@dimen/editText_up_and_down_margin"
+        android:entries="@array/color_name" />
+
+    <Spinner
+        android:id="@+id/seasonNameSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/editText_side_margin"
+        android:layout_marginRight="@dimen/editText_side_margin"
+        android:layout_marginTop="@dimen/editText_up_and_down_margin"
+        android:layout_marginBottom="@dimen/editText_up_and_down_margin"
+        android:entries="@array/season_name" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="@dimen/editText_up_and_down_margin"
+        android:layout_marginBottom="@dimen/editText_up_and_down_margin"
+        android:onClick="outputScore"
+        android:text="Output" />
+
+</LinearLayout>
