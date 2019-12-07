@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     var scoreList = arrayListOf<String>()
     var restoredScoreList = arrayListOf<String>()
 
-    // This function is for debugging. ( println() is not easy to see )
+    // function for debugging.
     fun toast(text: String) {Toast.makeText(this, text, Toast.LENGTH_SHORT).show()}
     fun toast(text: ArrayList<String>){
         var str = ""
