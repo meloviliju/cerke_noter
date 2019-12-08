@@ -1,5 +1,5 @@
 # cerke_noter
-![language:Kotlin](https://img.shields.io/badge/language-Kotlin-blue.svg) ![license:MIT](https://img.shields.io/badge/license-MIT-blue.svg)  
+![language:Kotlin](https://img.shields.io/badge/language-Kotlin-orange.svg) ![license:MIT](https://img.shields.io/badge/license-MIT-blue.svg)  
 Android app which takes score of the cerke game.
 
 ## Requirement
