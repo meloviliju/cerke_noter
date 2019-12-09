@@ -9,5 +9,5 @@ Android 4.4+ (Kitkat+)
 - Can transcribe score by tapping the grids, pieces, buttons, and spinner.
 - Can go back by tapping upper textView.
 - By tapping `Enter` button when lower textView shows no chars, app generates `.txt`file after some questions.
-- `.txt`file is saved on `storage/emuated/0/Android/data/com.example.cerkenoter/files/Documents`.
+- `.txt`file is saved on `storage/emulated/0/Android/data/com.example.cerkenoter/files/Documents`.
 - This `.txt`file can be treated as if this is a `.json`file.
