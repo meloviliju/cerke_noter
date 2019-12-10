@@ -62,13 +62,13 @@ class SetDataActivity : AppCompatActivity() {
         override fun onNothingSelected(parent: AdapterView<*>?) {}
     }
 
-    fun outputScore(view: View){
-        val os = shapeScoreData()
+    fun outputNote(view: View){
+        val os = shapeNoteData()
         if (null != os){
             val path: File? = getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)
             if (null != path){
                 val fileName = SimpleDateFormat("yyyyMMdd_HH-mm-ss").format(Date())
-                val file = File(path, "${fileName}.txt")
+                val file = File(path, "Note${fileName}.txt")
                 val bw = BufferedWriter(FileWriter(file))
 
                 bw.write(os)
@@ -78,16 +78,16 @@ class SetDataActivity : AppCompatActivity() {
         }
     }
 
-    private fun shapeScoreData(): String? {
+    private fun shapeNoteData(): String? {
         val redPlayerName = redPlayerNameView.text.toString()
         val blackPlayerName = blackPlayerNameView.text.toString()
-        val scoreArrayList = intent.getStringArrayListExtra(MainActivity().extraScoreKey)
+        val noteArrayList = intent.getStringArrayListExtra(MainActivity().extraNoteKey)
         val data = DataClass(
             blackPlayerName,
             redPlayerName,
             first,
             season,
-            scoreArrayList
+            noteArrayList
         )
 
         if (redPlayerName == "" || blackPlayerName == "" || first == "" || season == ""){
@@ -100,7 +100,7 @@ class SetDataActivity : AppCompatActivity() {
             val jsonString = mapper.writeValueAsString(data)
             return jsonString
         }catch(e: Exception){
-            toast("Sorry, something went wrong!\nCouldn't shape score string.")
+            toast("Sorry, something went wrong!\nCouldn't shape note string.")
             e.printStackTrace()
             return null
         }
@@ -112,5 +112,5 @@ class DataClass(
     @JsonProperty("red") val red: String,
     @JsonProperty("first") val first: String,
     @JsonProperty("season") val season: String,
-    @JsonProperty("score") val score: List<String>?
+    @JsonProperty("note") val note: ArrayList<String>?
 )

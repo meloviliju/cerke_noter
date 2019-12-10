@@ -7,20 +7,20 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/prevScoreView"
+        android:id="@+id/prevNoteView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:onClick="backScore"
+        android:onClick="backNote"
         android:text=""
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/scoreView"
+        app:layout_constraintBottom_toTopOf="@+id/noteView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/scoreView"
+        android:id="@+id/noteView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -29,7 +29,7 @@
         android:textSize="32sp"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prevScoreView"
+        app:layout_constraintTop_toBottomOf="@+id/prevNoteView"
         app:layout_constraintBottom_toTopOf="@+id/gridButtons"/>
 
     <Button
@@ -39,9 +39,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:text="Delete"
-        android:onClick="removeScoreText"
+        android:onClick="removeNoteText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prevScoreView"
+        app:layout_constraintTop_toBottomOf="@+id/prevNoteView"
         app:layout_constraintBottom_toTopOf="@+id/gridButtons" />
 
     <Button
@@ -51,9 +51,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Enter"
-        android:onClick="enterScore"
+        android:onClick="enterNote"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prevScoreView"
+        app:layout_constraintTop_toBottomOf="@+id/prevNoteView"
         app:layout_constraintBottom_toTopOf="@+id/gridButtons" />
 
     <ImageView
@@ -83,7 +83,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ka" />
 
         <Button
@@ -91,7 +91,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="la" />
 
         <Button
@@ -99,7 +99,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="na" />
 
         <Button
@@ -107,7 +107,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ta" />
 
         <Button
@@ -115,7 +115,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="za" />
 
         <Button
@@ -123,7 +123,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="xa" />
 
         <Button
@@ -131,7 +131,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ca" />
 
         <Button
@@ -139,7 +139,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ma" />
 
         <Button
@@ -147,7 +147,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="pa" />
 
         <Button
@@ -155,7 +155,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ke" />
 
         <Button
@@ -163,7 +163,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="le" />
 
         <Button
@@ -171,7 +171,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ne" />
 
         <Button
@@ -179,7 +179,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="te" />
 
         <Button
@@ -187,7 +187,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ze" />
 
         <Button
@@ -195,7 +195,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="xe" />
 
         <Button
@@ -203,7 +203,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ce" />
 
         <Button
@@ -211,7 +211,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="me" />
 
         <Button
@@ -219,7 +219,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="pe" />
 
         <Button
@@ -227,7 +227,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ki" />
 
         <Button
@@ -235,7 +235,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="li" />
 
         <Button
@@ -243,7 +243,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ni" />
 
         <Button
@@ -251,7 +251,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ti" />
 
         <Button
@@ -259,7 +259,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="zi" />
 
         <Button
@@ -267,7 +267,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="xi" />
 
         <Button
@@ -275,7 +275,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ci" />
 
         <Button
@@ -283,7 +283,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="mi" />
 
         <Button
@@ -291,7 +291,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="pi" />
 
         <Button
@@ -299,7 +299,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ku" />
 
         <Button
@@ -307,7 +307,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="lu" />
 
         <Button
@@ -315,7 +315,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="nu" />
 
         <Button
@@ -323,7 +323,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="tu" />
 
         <Button
@@ -331,7 +331,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="zu" />
 
         <Button
@@ -339,7 +339,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="xu" />
 
         <Button
@@ -347,7 +347,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="cu" />
 
         <Button
@@ -355,7 +355,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="mu" />
 
         <Button
@@ -363,7 +363,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="pu" />
 
         <Button
@@ -371,7 +371,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ko" />
 
         <Button
@@ -379,7 +379,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="lo" />
 
         <Button
@@ -387,7 +387,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="no" />
 
         <Button
@@ -395,7 +395,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="to" />
 
         <Button
@@ -403,7 +403,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="zo" />
 
         <Button
@@ -411,7 +411,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="xo" />
 
         <Button
@@ -419,7 +419,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="co" />
 
         <Button
@@ -427,7 +427,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="mo" />
 
         <Button
@@ -435,7 +435,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="po" />
 
         <Button
@@ -443,7 +443,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ky" />
 
         <Button
@@ -451,7 +451,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ly" />
 
         <Button
@@ -459,7 +459,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ny" />
 
         <Button
@@ -467,7 +467,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="ty" />
 
         <Button
@@ -475,7 +475,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="zy" />
 
         <Button
@@ -483,7 +483,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="xy" />
 
         <Button
@@ -491,7 +491,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="cy" />
 
         <Button
@@ -499,7 +499,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="my" />
 
         <Button
@@ -507,7 +507,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="py" />
 
         <Button
@@ -515,7 +515,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="kai" />
 
         <Button
@@ -523,7 +523,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="lai" />
 
         <Button
@@ -531,7 +531,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="nai" />
 
         <Button
@@ -539,7 +539,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="tai" />
 
         <Button
@@ -547,7 +547,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="zai" />
 
         <Button
@@ -555,7 +555,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="xai" />
 
         <Button
@@ -563,7 +563,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="cai" />
 
         <Button
@@ -571,7 +571,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="mai" />
 
         <Button
@@ -579,7 +579,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="pai" />
 
         <Button
@@ -587,7 +587,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="kau" />
 
         <Button
@@ -595,7 +595,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="lau" />
 
         <Button
@@ -603,7 +603,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="nau" />
 
         <Button
@@ -611,7 +611,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="tau" />
 
         <Button
@@ -619,7 +619,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="zau" />
 
         <Button
@@ -627,7 +627,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="xau" />
 
         <Button
@@ -635,7 +635,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="cau" />
 
         <Button
@@ -643,7 +643,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="mau" />
 
         <Button
@@ -651,14 +651,14 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="pau" />
         <Button
             android:id="@+id/kia"
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="kia" />
 
         <Button
@@ -666,7 +666,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="lia" />
 
         <Button
@@ -674,7 +674,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="nia" />
 
         <Button
@@ -682,7 +682,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="tia" />
 
         <Button
@@ -690,7 +690,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="zia" />
 
         <Button
@@ -698,7 +698,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="xia" />
 
         <Button
@@ -706,7 +706,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="cia" />
 
         <Button
@@ -714,7 +714,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="mia" />
 
         <Button
@@ -722,7 +722,7 @@
             android:layout_width="@dimen/grid_side_length"
             android:layout_height="@dimen/grid_side_length"
             android:background="@color/grid_button_bgcolor"
-            android:onClick="addScoreText"
+            android:onClick="addNoteText"
             android:tag="pia" />
     </GridLayout>
 
@@ -740,13 +740,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Black"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 android:tag="B"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Red"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 android:tag="R" />
         </LinearLayout>
         <Spinner
@@ -775,7 +775,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="V"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/bnuak" />
             <ImageView
                 android:id="@+id/kauk"
@@ -784,7 +784,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="P"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/bkauk" />
             <ImageView
                 android:id="@+id/gua"
@@ -793,7 +793,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="A"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/bgua" />
             <ImageView
                 android:id="@+id/kaun"
@@ -802,7 +802,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="C"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/bkaun" />
             <ImageView
                 android:id="@+id/dau"
@@ -811,7 +811,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="T"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/bdau" />
             <ImageView
                 android:id="@+id/maun"
@@ -820,7 +820,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="H"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/bmaun" />
             <ImageView
                 android:id="@+id/kua"
@@ -829,7 +829,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="O"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/bkua" />
             <ImageView
                 android:id="@+id/tuk"
@@ -838,7 +838,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="S"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/btuk" />
             <ImageView
                 android:id="@+id/uai"
@@ -847,7 +847,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="G"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/buai" />
             <ImageView
                 android:id="@+id/io"
@@ -856,7 +856,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="K"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/bio" />
             <ImageView
                 android:id="@+id/tam"
@@ -865,7 +865,7 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/piece_image_margin"
                 android:tag="M"
-                android:onClick="addScoreText"
+                android:onClick="addNoteText"
                 app:srcCompat="@drawable/btam" />
         </LinearLayout>
     </HorizontalScrollView>

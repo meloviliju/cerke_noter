@@ -22,9 +22,9 @@ private inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
 }
 
 class MainActivity : AppCompatActivity() {
-    val extraScoreKey = "com.example.cerkenoter.score"
-    var scoreList = arrayListOf<String>()
-    var restoredScoreList = arrayListOf<String>()
+    val extraNoteKey = "com.example.cerkenoter.note"
+    var noteList = arrayListOf<String>()
+    var restoredNoteList = arrayListOf<String>()
 
     // function for debugging.
     fun toast(text: String) {Toast.makeText(this, text, Toast.LENGTH_SHORT).show()}
@@ -77,20 +77,20 @@ class MainActivity : AppCompatActivity() {
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             val str = parent?.getSelectedItem().toString()
 
-            a.scoreView.text = a.scoreView.text.toString() + str
+            a.noteView.text = a.noteView.text.toString() + str
         }
 
         override fun onNothingSelected(parent: AdapterView<*>?) {}
     }
 
-    fun scoreParse(scoreText: CharSequence): ArrayList<String> {
+    fun noteParse(noteText: CharSequence): ArrayList<String> {
         val consonant = listOf('k', 'l', 'n', 't', 'z', 'x', 'c', 'm', 'p')
         val pieceName = listOf('V', 'P', 'A', 'C', 'T', 'H', 'O', 'S', 'G', 'K', 'M')
         val number = listOf('0', '1', '2', '3', '4', '5')
         var resultList = arrayListOf<String>()
         var tmpString = ""
 
-        for (char in scoreText) {
+        for (char in noteText) {
             if ((char in consonant || char in pieceName || char in number) && tmpString != "") {
                 resultList.add(tmpString)
                 tmpString = char.toString()
@@ -102,20 +102,20 @@ class MainActivity : AppCompatActivity() {
         return resultList
     }
 
-    fun addScoreText(view: View){
-        val scoreText = scoreView.text.toString()
-        val parsedList: ArrayList<String> = scoreParse(scoreText)
+    fun addNoteText(view: View){
+        val noteText = noteView.text.toString()
+        val parsedList: ArrayList<String> = noteParse(noteText)
 
         if (parsedList.size == 4){
             Toast.makeText(this, "Cannot add text! Too much element.", Toast.LENGTH_SHORT).show()
         }else{
-            scoreView.text = scoreText + view.tag.toString()
+            noteView.text = noteText + view.tag.toString()
         }
     }
 
-    fun removeScoreText(view: View){
-        val scoreText = scoreView.text.toString()
-        val parsedList: ArrayList<String> = scoreParse(scoreText)
+    fun removeNoteText(view: View){
+        val noteText = noteView.text.toString()
+        val parsedList: ArrayList<String> = noteParse(noteText)
 
         if (parsedList.isEmpty()){
             Toast.makeText(this, "Cannot remove text! Already Empty.", Toast.LENGTH_SHORT).show()
@@ -124,47 +124,47 @@ class MainActivity : AppCompatActivity() {
             for (str in parsedList.dropLast(1)){
                 nextText += str
             }
-            scoreView.text = nextText
+            noteView.text = nextText
         }
     }
 
-    fun enterScore(view: View){
-        val scoreText = scoreView.text.toString()
+    fun enterNote(view: View){
+        val noteText = noteView.text.toString()
 
-        if (scoreText.isBlank()){
+        if (noteText.isBlank()){
             val intent = Intent(this, SetDataActivity::class.java).apply {
-                putStringArrayListExtra(extraScoreKey, scoreList)
+                putStringArrayListExtra(extraNoteKey, noteList)
             }
             startActivity(intent)
         }else{
-            scoreList.add(scoreText)
-            prevScoreView.text = scoreText
-            if (restoredScoreList.size == 0) {
-                scoreView.text = ""
+            noteList.add(noteText)
+            prevNoteView.text = noteText
+            if (restoredNoteList.size == 0) {
+                noteView.text = ""
             } else {
-                scoreView.text = restoredScoreList[restoredScoreList.lastIndex]
-                restoredScoreList.removeAt(restoredScoreList.lastIndex)
+                noteView.text = restoredNoteList[restoredNoteList.lastIndex]
+                restoredNoteList.removeAt(restoredNoteList.lastIndex)
             }
         }
     }
 
-    fun backScore(view: View){
-        val prevScoreText = prevScoreView.text.toString()
+    fun backNote(view: View){
+        val prevNoteText = prevNoteView.text.toString()
 
-        when(scoreList.size) {
+        when(noteList.size) {
             0 -> {}
             1 -> {
-                prevScoreView.text = ""
-                restoredScoreList.add(scoreView.text.toString())
-                //toast(restoredScoreList)
+                prevNoteView.text = ""
+                restoredNoteList.add(noteView.text.toString())
+                //toast(restoredNoteList)
             }
             else -> {
-                prevScoreView.text = scoreList[scoreList.lastIndex-1]
-                restoredScoreList.add(scoreView.text.toString())
-                //toast(restoredScoreList)
+                prevNoteView.text = noteList[noteList.lastIndex-1]
+                restoredNoteList.add(noteView.text.toString())
+                //toast(restoredNoteList)
             }
         }
-        scoreView.text = prevScoreText
-        scoreList.removeAt(scoreList.lastIndex)
+        noteView.text = prevNoteText
+        noteList.removeAt(noteList.lastIndex)
     }
 }
