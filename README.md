@@ -1,6 +1,6 @@
 # cerke_noter
 ![language:Kotlin](https://img.shields.io/badge/language-Kotlin-orange.svg) ![license:MIT](https://img.shields.io/badge/license-MIT-blue.svg)  
-Android app which takes score of the cerke game.
+Android app for note of the cerke game.
 
 ## Requirement
 Android 4.4+ (Kitkat+)
