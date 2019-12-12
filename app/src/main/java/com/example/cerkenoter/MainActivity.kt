@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.field
 import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlin.math.min
 
 private inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
     viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
@@ -23,8 +24,8 @@ private inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
 
 class MainActivity : AppCompatActivity() {
     val extraNoteKey = "com.example.cerkenoter.note"
-    var noteList = arrayListOf<String>()
-    var restoredNoteList = arrayListOf<String>()
+    private var noteList = arrayListOf<String>()
+    private var restoredNoteList = arrayListOf<String>()
 
     // function for debugging.
     fun toast(text: String) {Toast.makeText(this, text, Toast.LENGTH_SHORT).show()}
@@ -39,11 +40,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initSpinners()
         field.afterMeasured {
-            gridSizeModify(field.width)
+            min(field.width, field.height).also {
+                gridSizeModify(it)
+            }
         }
     }
 
-    private fun gridSizeModify(fieldWidth: Int){
+    private fun gridSizeModify(fieldSize: Int){
         val buttonList = arrayListOf(
             ka, ke, ki, ku, ko, ky, kai, kau, kia,
             la, le, li, lu, lo, ly, lai, lau, lia,
@@ -57,8 +60,8 @@ class MainActivity : AppCompatActivity() {
             )
         for (btn in buttonList){
             val lp = btn.layoutParams
-            lp.width = fieldWidth / 9
-            lp.height = fieldWidth / 9
+            lp.width = fieldSize / 9
+            lp.height = fieldSize / 9
             btn.layoutParams = lp
         }
     }
@@ -75,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
     private inner class SpinnerActivity(val a:  AppCompatActivity) : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            val str = parent?.getSelectedItem().toString()
+            val str = parent?.selectedItem.toString()
 
             a.noteView.text = a.noteView.text.toString() + str
         }
@@ -109,7 +112,7 @@ class MainActivity : AppCompatActivity() {
         if (parsedList.size == 4){
             Toast.makeText(this, "Cannot add text! Too much element.", Toast.LENGTH_SHORT).show()
         }else{
-            noteView.text = noteText + view.tag.toString()
+            noteView.text = "$noteText${view.tag}"
         }
     }
 
