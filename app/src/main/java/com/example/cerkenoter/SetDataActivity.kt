@@ -1,7 +1,6 @@
 package com.example.cerkenoter
 
 import android.os.Bundle
-import android.os.Environment
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -9,7 +8,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_set_data.*
 import java.io.BufferedWriter
 import java.io.File
@@ -37,7 +35,7 @@ class SetDataActivity : AppCompatActivity() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             firstPlayerSpinner.adapter = adapter
         }
-        firstPlayerSpinner.onItemSelectedListener = colorSpinnerActivity(this)
+        firstPlayerSpinner.onItemSelectedListener = ColorSpinnerActivity(this)
 
         ArrayAdapter.createFromResource(
             this, R.array.season_name, android.R.layout.simple_spinner_item
@@ -45,19 +43,19 @@ class SetDataActivity : AppCompatActivity() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             seasonNameSpinner.adapter = adapter
         }
-        seasonNameSpinner.onItemSelectedListener = seasonSpinnerActivity(this)
+        seasonNameSpinner.onItemSelectedListener = SeasonSpinnerActivity(this)
     }
 
-    private inner class colorSpinnerActivity(val a:  AppCompatActivity) : AppCompatActivity(), AdapterView.OnItemSelectedListener{
+    private inner class ColorSpinnerActivity(val a:  AppCompatActivity) : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            first = parent?.getSelectedItem().toString()
+            first = parent?.selectedItem.toString()
         }
         override fun onNothingSelected(parent: AdapterView<*>?) {}
     }
 
-    private inner class seasonSpinnerActivity(val a:  AppCompatActivity) : AppCompatActivity(), AdapterView.OnItemSelectedListener{
+    private inner class SeasonSpinnerActivity(val a:  AppCompatActivity) : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            season = parent?.getSelectedItem().toString()
+            season = parent?.selectedItem.toString()
         }
         override fun onNothingSelected(parent: AdapterView<*>?) {}
     }
@@ -65,15 +63,15 @@ class SetDataActivity : AppCompatActivity() {
     fun outputNote(view: View){
         val os = shapeNoteData()
         if (null != os){
-            val path: File? = getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)
+            val path: File? = getExternalFilesDir(null)
             if (null != path){
                 val fileName = SimpleDateFormat("yyyyMMdd_HH-mm-ss").format(Date())
-                val file = File(path, "Note${fileName}.txt")
+                val file = File(path, "note${fileName}.txt")
                 val bw = BufferedWriter(FileWriter(file))
 
                 bw.write(os)
                 bw.close()
-                toast("Saved successfully! $fileName.txt")
+                toast("Saved successfully!\n note$fileName.txt")
             }
         }
     }
