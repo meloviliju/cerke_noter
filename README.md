@@ -6,7 +6,7 @@ Android app for notation of the cerke game.
 Android 4.4+ (Kitkat+)
 
 ## Feature
-- Can transcribe score by tapping the grids, pieces, buttons, and spinner.
+- Can transcribe note by tapping the grids, pieces, buttons, and spinner.
 - Can go back by tapping upper textView.
 - By tapping `Enter` button when lower textView shows no chars, app generates `.txt`file after some questions.
 - `.txt`file is saved on `storage/emulated/0/Android/data/com.example.cerkenoter/files`.
