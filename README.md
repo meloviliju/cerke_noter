@@ -6,6 +6,5 @@ Android app for notation of the cerke game.
 Android 4.4+ (Kitkat+)
 
 ## Feature
-- Can transcribe note by tapping the grids, pieces, buttons, and spinner.
-- Can generate note as `.txt`file on `storage/emulated/0/Android/data/com.schwert398.cerkenoter/files`.
-- This `.txt`file can be treated as if this is a `.json`file.
+- Can transcribe hands into machine-readable format.
+- Can generate note as `.txt`file which can be treated as if this is a `.json`file.
