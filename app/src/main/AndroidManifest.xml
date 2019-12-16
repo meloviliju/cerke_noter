@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cerkenoter">
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    package="com.schwert398.cerkenoter">
 
     <application
         android:allowBackup="true"
@@ -12,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".MainActivity"
+            android:name="com.schwert398.cerkenoter.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,12 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SetDataActivity"
-            android:parentActivityName=".MainActivity"
+            android:name="com.schwert398.cerkenoter.SetDataActivity"
+            android:parentActivityName="com.schwert398.cerkenoter.MainActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.schwert398.cerkenoter.MainActivity" />
         </activity>
 
     </application>

@@ -734,33 +734,30 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="8dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/outerPieceQueue"
         app:layout_constraintTop_toBottomOf="@+id/gridButtons">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="addNoteText"
-                android:tag="B"
-                android:text="Black" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="addNoteText"
-                android:tag="R"
-                android:text="Red" />
-        </LinearLayout>
-
         <Spinner
-            android:id="@+id/judgeNumberSpinner"
+            android:id="@+id/colorSpinner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:entries="@array/judge_number" />
+            android:entries="@array/color_name"
+            android:layout_weight="1" />
+
+        <Spinner
+            android:id="@+id/declarationSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/declaration_name"
+            android:layout_weight="1" />
+
+        <Spinner
+            android:id="@+id/judgeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/judge_number"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <HorizontalScrollView
