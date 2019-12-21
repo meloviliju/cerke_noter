@@ -92,7 +92,11 @@ class MainActivity : AppCompatActivity() {
 
     private inner class SpinnerActivity(val a:  AppCompatActivity) : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            val str = parent?.selectedItem.toString()
+            val str = when (parent?.selectedItem.toString()) {
+                "black" ->"B"
+                "red" -> "R"
+                else -> parent?.selectedItem.toString()
+            }
 
             a.noteView.text = a.noteView.text.toString() + str
         }
