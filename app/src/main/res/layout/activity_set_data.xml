@@ -46,6 +46,17 @@
         android:layout_marginBottom="@dimen/editText_up_and_down_margin"
         android:entries="@array/season_name" />
 
+    <EditText
+        android:id="@+id/handsEditView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/editText_side_margin"
+        android:layout_marginTop="@dimen/editText_up_and_down_margin"
+        android:layout_marginRight="@dimen/editText_side_margin"
+        android:layout_marginBottom="@dimen/editText_up_and_down_margin"
+        android:hint="Final hands?"
+        android:inputType="text" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

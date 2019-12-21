@@ -79,7 +79,12 @@ class SetDataActivity : AppCompatActivity() {
     private fun shapeNoteData(): String? {
         val redPlayerName = redPlayerNameView.text.toString()
         val blackPlayerName = blackPlayerNameView.text.toString()
+        val hands = handsEditView.text.toString()
         val noteArrayList = intent.getStringArrayListExtra(MainActivity().extraNoteKey)
+
+        val lastNote = noteArrayList[noteArrayList.size-1]
+        noteArrayList[noteArrayList.size-1] = "$lastNote=$hands"
+
         val data = DataClass(
             blackPlayerName,
             redPlayerName,
