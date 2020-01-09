@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_set_data.*
 import java.io.BufferedWriter
 import java.io.File
 import java.io.FileWriter
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -82,8 +81,13 @@ class SetDataActivity : AppCompatActivity() {
         val hands = handsEditView.text.toString()
         val noteArrayList = intent.getStringArrayListExtra(MainActivity().extraNoteKey)
 
-        val lastNote = noteArrayList[noteArrayList.size-1]
-        noteArrayList[noteArrayList.size-1] = "$lastNote=$hands"
+        try {
+            val lastNote = noteArrayList[noteArrayList.size - 1]
+            noteArrayList[noteArrayList.size - 1] = "$lastNote=$hands"
+        }catch (e: Exception){
+            e.printStackTrace()
+            toast("Sorry, something went wrong!\nPlease try again after rebooting app.")
+        }
 
         val data = DataClass(
             blackPlayerName,
@@ -98,14 +102,14 @@ class SetDataActivity : AppCompatActivity() {
             return null
         }
 
-        try{
+        return try{
             val mapper = jacksonObjectMapper()
             val jsonString = mapper.writeValueAsString(data)
-            return jsonString
+            jsonString
         }catch(e: Exception){
             toast("Sorry, something went wrong!\nCouldn't shape note string.")
             e.printStackTrace()
-            return null
+            null
         }
     }
 }
