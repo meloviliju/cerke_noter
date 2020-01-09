@@ -20,7 +20,7 @@ class SetDataActivity : AppCompatActivity() {
     private var first = ""
     private var season = ""
 
-    fun toast(text: String) {Toast.makeText(this, text, Toast.LENGTH_SHORT).show()}
+    private fun toast(text: String) {Toast.makeText(this, text, Toast.LENGTH_SHORT).show()}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
