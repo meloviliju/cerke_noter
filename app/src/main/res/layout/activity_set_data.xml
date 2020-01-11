@@ -12,7 +12,7 @@
         android:layout_marginTop="@dimen/editText_up_and_down_margin"
         android:layout_marginRight="@dimen/editText_side_margin"
         android:layout_marginBottom="@dimen/editText_up_and_down_margin"
-        android:hint="Black player's name?"
+        android:hint="@string/editText_black_name"
         android:inputType="text" />
 
     <EditText
@@ -23,7 +23,7 @@
         android:layout_marginTop="@dimen/editText_up_and_down_margin"
         android:layout_marginRight="@dimen/editText_side_margin"
         android:layout_marginBottom="@dimen/editText_up_and_down_margin"
-        android:hint="Red player's name?"
+        android:hint="@string/editText_red_name"
         android:inputType="text" />
 
     <Spinner
@@ -54,7 +54,7 @@
         android:layout_marginTop="@dimen/editText_up_and_down_margin"
         android:layout_marginRight="@dimen/editText_side_margin"
         android:layout_marginBottom="@dimen/editText_up_and_down_margin"
-        android:hint="Final hands?"
+        android:hint="@string/editText_hands"
         android:inputType="text" />
 
     <Button
@@ -65,7 +65,7 @@
         android:layout_marginTop="@dimen/editText_up_and_down_margin"
         android:layout_marginBottom="@dimen/editText_up_and_down_margin"
         android:onClick="onClickButton"
-        android:text="Output" />
+        android:text="@string/button_text_output" />
 
     <Button
         android:id="@+id/resetButton"
@@ -75,6 +75,6 @@
         android:layout_marginTop="@dimen/editText_up_and_down_margin"
         android:layout_marginBottom="@dimen/editText_up_and_down_margin"
         android:onClick="onClickButton"
-        android:text="To next season" />
+        android:text="@string/button_text_to_next_season" />
 
 </LinearLayout>

@@ -41,7 +41,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         android:onClick="onClickButton"
-        android:text="Delete"
+        android:text="@string/button_text_delete"
         app:layout_constraintBottom_toTopOf="@+id/gridButtons"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prevNoteView" />
@@ -55,7 +55,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:onClick="onClickButton"
-        android:text="Enter"
+        android:text="@string/button_text_over"
         app:layout_constraintBottom_toTopOf="@+id/gridButtons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prevNoteView" />

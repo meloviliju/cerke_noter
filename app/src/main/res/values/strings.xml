@@ -31,8 +31,16 @@
         <item>winter</item>
     </string-array>
 
-    <string name="dialog_title">Output score file</string>
-    <string name="dialog_message">Finish inputting score?</string>
+    <string name="button_text_enter">Enter</string>
+    <string name="button_text_over">Over</string>
+    <string name="button_text_delete">Delete</string>
+    <string name="button_text_output">Output</string>
+    <string name="button_text_to_next_season">To next Season</string>
+
+    <string name="editText_hands">Final hands?</string>
+    <string name="editText_black_name">Black player\'s name?</string>
+    <string name="editText_red_name">Red player\'s name?</string>
+
     <string name="ok">OK</string>
     <string name="ng">Cancel</string>
 </resources>
