@@ -81,26 +81,20 @@ class SetDataActivity : AppCompatActivity() {
         val hands = handsEditView.text.toString()
         val noteArrayList = intent.getStringArrayListExtra(MainActivity().extraNoteKey)
 
-        try {
-            val lastNote = noteArrayList[noteArrayList.size - 1]
-            noteArrayList[noteArrayList.size - 1] = "$lastNote=$hands"
-        }catch (e: Exception){
-            e.printStackTrace()
-            toast("Sorry, something went wrong!\nPlease try again after rebooting app.")
-        }
-
-        val data = DataClass(
-            blackPlayerName,
-            redPlayerName,
-            first,
-            season,
-            noteArrayList
-        )
-
-        if (redPlayerName == "" || blackPlayerName == "" || first == "" || season == ""){
+        if (null == noteArrayList){
+            toast("The note seems to be invalid.\nPlease report this to the developer.")
+            return null
+        }else if (redPlayerName == "" || blackPlayerName == "" || first == "" || season == ""){
             toast("Fill in the all blanks!")
             return null
         }
+
+        noteArrayList[noteArrayList.lastIndex] = "${noteArrayList.lastOrNull()}=$hands"
+        val data = DataClass(
+            blackPlayerName, redPlayerName,
+            first, season,
+            noteArrayList
+        )
 
         return try{
             val mapper = jacksonObjectMapper()
