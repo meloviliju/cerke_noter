@@ -1,5 +1,7 @@
 package com.schwert398.cerkenoter
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -19,7 +21,7 @@ class SetDataActivity : AppCompatActivity() {
     private var first = ""
     private var season = ""
 
-    private fun toast(text: String) {Toast.makeText(this, text, Toast.LENGTH_SHORT).show()}
+    private fun toast(text: String) = Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +61,17 @@ class SetDataActivity : AppCompatActivity() {
         override fun onNothingSelected(parent: AdapterView<*>?) {}
     }
 
-    fun outputNote(view: View){
+    fun onClickButton(view: View){
+        when (view) {
+            outputButton -> outputNote()
+            resetButton ->{
+                setResult(Activity.RESULT_OK, Intent())
+                finish()
+            }
+        }
+    }
+
+    private fun outputNote(){
         val os = shapeNoteData()
         if (null != os){
             val path: File? = getExternalFilesDir(null)

@@ -1,5 +1,6 @@
 package com.schwert398.cerkenoter
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -23,11 +24,12 @@ private inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
 
 class MainActivity : AppCompatActivity() {
     val extraNoteKey = "com.schwert398.cerkenoter.note"
-    private var noteList = arrayListOf<String>()
-    private var restoredNoteList = arrayListOf<String>()
+    private val pickContactRequest = 1001
+    private val noteList = arrayListOf<String>()
+    private val restoredNoteList = arrayListOf<String>()
 
     // function for debugging.
-    fun toast(text: String) {Toast.makeText(this, text, Toast.LENGTH_SHORT).show()}
+    private fun toast(text: String) = Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
     fun toast(text: ArrayList<String>){
         var str = ""
         for (elm in text) str += "$elm "
@@ -40,6 +42,18 @@ class MainActivity : AppCompatActivity() {
         initSpinners()
         field.afterMeasured {
             gridSizeModify(min(field.width, field.height))
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == pickContactRequest){
+            if (resultCode ==Activity.RESULT_OK) {
+                noteList.clear()
+                restoredNoteList.clear()
+                noteView.text = ""
+                prevNoteView.text = ""
+            }
         }
     }
 
