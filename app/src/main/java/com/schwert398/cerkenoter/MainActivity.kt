@@ -65,29 +65,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initSpinners(){
-        ArrayAdapter.createFromResource(
-            this, R.array.judge_number, android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            judgeSpinner.adapter = adapter
+        val spinnerArray = arrayOf(judgeSpinner, colorSpinner, declarationSpinner)
+        val stringArrayArray = arrayOf(
+            R.array.judge_number, R.array.color_name, R.array.declaration_name
+        )
+        for ((spinner, stringArray) in spinnerArray.zip(stringArrayArray)) {
+            ArrayAdapter.createFromResource(
+                this, stringArray, android.R.layout.simple_spinner_item
+            ).also { adapter ->
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                spinner.adapter = adapter
+            }
+            spinner.onItemSelectedListener = SpinnerActivity(this)
         }
-        judgeSpinner.onItemSelectedListener = SpinnerActivity(this)
-
-        ArrayAdapter.createFromResource(
-            this, R.array.color_name, android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            colorSpinner.adapter = adapter
-        }
-        colorSpinner.onItemSelectedListener = SpinnerActivity(this)
-
-        ArrayAdapter.createFromResource(
-            this, R.array.declaration_name, android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            declarationSpinner.adapter = adapter
-        }
-        declarationSpinner.onItemSelectedListener = SpinnerActivity(this)
     }
 
     private inner class SpinnerActivity(val a:  AppCompatActivity) : AppCompatActivity(), AdapterView.OnItemSelectedListener{
@@ -97,7 +87,6 @@ class MainActivity : AppCompatActivity() {
                 "red" -> "R"
                 else -> parent?.selectedItem.toString()
             }
-
             a.noteView.text = a.noteView.text.toString() + str
         }
 
