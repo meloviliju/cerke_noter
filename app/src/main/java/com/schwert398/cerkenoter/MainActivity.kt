@@ -7,7 +7,6 @@ import android.widget.*
 import android.view.ViewTreeObserver
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.field
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlin.math.min
 
@@ -97,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         val consonant = listOf('k', 'l', 'n', 't', 'z', 'x', 'c', 'm', 'p')
         val pieceName = listOf('V', 'P', 'A', 'C', 'T', 'H', 'O', 'S', 'G', 'K', 'M')
         val number = listOf('0', '1', '2', '3', '4', '5')
-        var resultList = arrayListOf<String>()
+        val resultList = arrayListOf<String>()
         var tmpString = ""
 
         for (char in noteText) {
@@ -118,6 +117,16 @@ class MainActivity : AppCompatActivity() {
         return resultList
     }
 
+    fun onClickButton(view: View){
+        when (view) {
+            deleteButton -> removeNoteText()
+            enterButton -> {
+                if (noteView.text.isBlank()) transitActivity()
+                else enterNote()
+            }
+        }
+    }
+
     fun addNoteText(view: View){
         val noteText = noteView.text.toString()
         val parsedList: ArrayList<String> = noteParse(noteText)
@@ -129,7 +138,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun removeNoteText(view: View){
+    private fun removeNoteText(){
         val noteText = noteView.text.toString()
         val parsedList: ArrayList<String> = noteParse(noteText)
 
@@ -144,27 +153,27 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun enterNote(view: View){
-        val noteText = noteView.text.toString()
-
-        if (noteText.isBlank()){
-            val intent = Intent(this, SetDataActivity::class.java).apply {
-                putStringArrayListExtra(extraNoteKey, noteList)
-            }
-            startActivity(intent)
-        }else{
-            noteList.add(noteText)
-            prevNoteView.text = noteText
-            if (restoredNoteList.size == 0) {
-                noteView.text = ""
-            } else {
-                noteView.text = restoredNoteList[restoredNoteList.lastIndex]
-                restoredNoteList.removeAt(restoredNoteList.lastIndex)
-            }
+    private fun transitActivity(){
+        Intent(this, SetDataActivity::class.java).apply {
+            putStringArrayListExtra(extraNoteKey, noteList)
+        }.also {
+            startActivityForResult(it, pickContactRequest)
         }
     }
 
-    fun backNote(view: View){
+    private fun enterNote(){
+        val noteText = noteView.text.toString()
+        noteList.add(noteText)
+        prevNoteView.text = noteText
+        if (restoredNoteList.size == 0) {
+            noteView.text = ""
+        } else {
+            noteView.text = restoredNoteList[restoredNoteList.lastIndex]
+            restoredNoteList.removeAt(restoredNoteList.lastIndex)
+        }
+    }
+
+    fun backNote(@Suppress("UNUSED_PARAMETER") view: View){
         val prevNoteText = prevNoteView.text.toString()
 
         when(noteList.size) {

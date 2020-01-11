@@ -33,26 +33,28 @@
         app:layout_constraintTop_toBottomOf="@+id/prevNoteView" />
 
     <Button
+        android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
-        android:onClick="removeNoteText"
+        android:onClick="onClickButton"
         android:text="Delete"
         app:layout_constraintBottom_toTopOf="@+id/gridButtons"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prevNoteView" />
 
     <Button
+        android:id="@+id/enterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="enterNote"
+        android:onClick="onClickButton"
         android:text="Enter"
         app:layout_constraintBottom_toTopOf="@+id/gridButtons"
         app:layout_constraintEnd_toEndOf="parent"
