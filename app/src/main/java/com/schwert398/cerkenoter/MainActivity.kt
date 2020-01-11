@@ -150,6 +150,7 @@ class MainActivity : AppCompatActivity() {
         }else{
             noteView.text = "$noteText${view.tag}"
         }
+        enterButton.text = resources.getText(R.string.button_text_enter)
     }
 
     private fun removeNoteText(){
@@ -164,6 +165,9 @@ class MainActivity : AppCompatActivity() {
                 nextText += str
             }
             noteView.text = nextText
+        }
+        if (noteView.text.isEmpty()){
+            enterButton.text = resources.getText(R.string.button_text_over)
         }
     }
 
@@ -182,9 +186,10 @@ class MainActivity : AppCompatActivity() {
         if (restoredNoteList.size == 0) {
             noteView.text = ""
         } else {
-            noteView.text = restoredNoteList[restoredNoteList.lastIndex]
+            noteView.text = restoredNoteList.last()
             restoredNoteList.removeAt(restoredNoteList.lastIndex)
         }
+        enterButton.text = resources.getText(R.string.button_text_over)
     }
 
     fun backNote(@Suppress("UNUSED_PARAMETER") view: View){
@@ -195,12 +200,10 @@ class MainActivity : AppCompatActivity() {
             1 -> {
                 prevNoteView.text = ""
                 restoredNoteList.add(noteView.text.toString())
-                //toast(restoredNoteList)
             }
             else -> {
-                prevNoteView.text = noteList[noteList.lastIndex-1]
+                prevNoteView.text = noteList.last()
                 restoredNoteList.add(noteView.text.toString())
-                //toast(restoredNoteList)
             }
         }
         noteView.text = prevNoteText
