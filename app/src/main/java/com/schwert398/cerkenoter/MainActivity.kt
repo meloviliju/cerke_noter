@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == pickContactRequest){
-            if (resultCode ==Activity.RESULT_OK) {
+            if (resultCode == Activity.RESULT_OK) {
                 noteList.clear()
                 restoredNoteList.clear()
                 noteView.text = ""
@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
     private inner class SpinnerActivity(val a:  AppCompatActivity) : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             val str = when (parent?.selectedItem.toString()) {
-                "black" ->"B"
+                "black" -> "B"
                 "red" -> "R"
                 else -> parent?.selectedItem.toString()
             }
@@ -202,7 +202,7 @@ class MainActivity : AppCompatActivity() {
                 restoredNoteList.add(noteView.text.toString())
             }
             else -> {
-                prevNoteView.text = noteList.last()
+                prevNoteView.text = noteList[noteList.lastIndex-1]
                 restoredNoteList.add(noteView.text.toString())
             }
         }
