@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.schwert398.cerkenoter.beta",
+  "applicationId": "com.meloviliju.cerkenoter.beta",
   "variantName": "processBetaReleaseResources",
   "elements": [
     {

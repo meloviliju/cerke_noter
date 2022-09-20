@@ -23,9 +23,9 @@ private inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
 }
 
 class MainActivity : AppCompatActivity() {
-    val extraNoteKey = "com.schwert398.cerkenoter.NOTE"
-    val extraRedKey = "com.schwert398.cerkenoter.RED_PLAYER_NAME"
-    val extraBlackKey = "com.schwert398.cerkenoter.BLACK_PLAYER_NAME"
+    val extraNoteKey = "com.meloviliju.cerkenoter.NOTE"
+    val extraRedKey = "com.meloviliju.cerkenoter.RED_PLAYER_NAME"
+    val extraBlackKey = "com.meloviliju.cerkenoter.BLACK_PLAYER_NAME"
     private val pickContactRequest = 1001
     private val noteList = arrayListOf<String>()
     private val restoredNoteList = arrayListOf<String>()
