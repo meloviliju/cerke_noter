@@ -1,4 +1,4 @@
-package com.schwert398.cerkenoter
+package com.meloviliju.cerkenoter
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

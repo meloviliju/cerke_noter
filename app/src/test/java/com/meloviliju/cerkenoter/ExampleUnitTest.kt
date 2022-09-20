@@ -1,4 +1,4 @@
-package com.schwert398.cerkenoter
+package com.meloviliju.cerkenoter
 
 import org.junit.Test
 

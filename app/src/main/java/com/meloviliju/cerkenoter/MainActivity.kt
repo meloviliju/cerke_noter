@@ -1,4 +1,4 @@
-package com.schwert398.cerkenoter
+package com.meloviliju.cerkenoter
 
 import android.app.Activity
 import android.content.Intent
@@ -23,10 +23,15 @@ private inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
 }
 
 class MainActivity : AppCompatActivity() {
-    val extraNoteKey = "com.schwert398.cerkenoter.note"
+    val extraNoteKey = "com.schwert398.cerkenoter.NOTE"
+    val extraRedKey = "com.schwert398.cerkenoter.RED_PLAYER_NAME"
+    val extraBlackKey = "com.schwert398.cerkenoter.BLACK_PLAYER_NAME"
     private val pickContactRequest = 1001
     private val noteList = arrayListOf<String>()
     private val restoredNoteList = arrayListOf<String>()
+
+    private var redPlayerName: String? = null
+    private var blackPlayerName: String? = null
 
     // function for debugging.
     private fun toast(text: String) = Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
@@ -53,6 +58,12 @@ class MainActivity : AppCompatActivity() {
                 restoredNoteList.clear()
                 noteView.text = ""
                 prevNoteView.text = ""
+                if (null == intent) toast("data is null")
+                redPlayerName = data?.getStringExtra(extraRedKey)
+                blackPlayerName = data?.getStringExtra(extraBlackKey)
+                if (redPlayerName == null || redPlayerName == "") toast("red is null")
+                if (blackPlayerName == null || blackPlayerName == "") toast("black is null")
+                toast("$redPlayerName, $blackPlayerName")
             }
         }
     }
@@ -101,6 +112,7 @@ class MainActivity : AppCompatActivity() {
                 else -> parent?.selectedItem.toString()
             }
             a.noteView.text = a.noteView.text.toString() + str
+            a.enterButton.text = a.resources.getText(R.string.button_text_enter)
         }
 
         override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -149,7 +161,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Cannot add text! Too much element.", Toast.LENGTH_SHORT).show()
         }else{
             noteView.text = "$noteText${view.tag}"
-        }
+            }
         enterButton.text = resources.getText(R.string.button_text_enter)
     }
 
@@ -173,6 +185,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun transitActivity(){
         Intent(this, SetDataActivity::class.java).apply {
+            putExtra(extraRedKey, redPlayerName)
+            putExtra(extraBlackKey, blackPlayerName)
             putStringArrayListExtra(extraNoteKey, noteList)
         }.also {
             startActivityForResult(it, pickContactRequest)
@@ -192,7 +206,7 @@ class MainActivity : AppCompatActivity() {
         enterButton.text = resources.getText(R.string.button_text_over)
     }
 
-    fun backNote(@Suppress("UNUSED_PARAMETER") view: View){
+    fun backNote(view: View){
         val prevNoteText = prevNoteView.text.toString()
 
         when(noteList.size) {

@@ -1,9 +1,8 @@
-package com.schwert398.cerkenoter
+package com.meloviliju.cerkenoter
 
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.test.espresso.Espresso.onData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.scrollTo
@@ -85,7 +84,7 @@ class MainActivityTest {
 
         val textView = onView(
             allOf(
-                withId(R.id.scoreView), withText("naiPny"),
+                withId(R.id.noteView), withText("naiPny"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -202,19 +201,9 @@ class MainActivityTest {
         )
         appCompatSpinner.perform(click())
 
-        val appCompatCheckedTextView = onData(anything())
-            .inAdapterView(
-                childAtPosition(
-                    withClassName(`is`("android.widget.PopupWindow$PopupBackgroundView")),
-                    0
-                )
-            )
-            .atPosition(3)
-        appCompatCheckedTextView.perform(click())
-
         val textView2 = onView(
             allOf(
-                withId(R.id.scoreView), withText("meAmimu2"),
+                withId(R.id.noteView), withText("meAmimu2"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -417,16 +406,6 @@ class MainActivityTest {
         )
         appCompatSpinner2.perform(click())
 
-        val appCompatCheckedTextView2 = onData(anything())
-            .inAdapterView(
-                childAtPosition(
-                    withClassName(`is`("android.widget.PopupWindow$PopupBackgroundView")),
-                    0
-                )
-            )
-            .atPosition(2)
-        appCompatCheckedTextView2.perform(click())
-
         val appCompatButton15 = onView(
             allOf(
                 withText("Enter"),
@@ -512,7 +491,7 @@ class MainActivityTest {
 
         val textView3 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("mauAcau"),
+                withId(R.id.prevNoteView), withText("mauAcau"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -527,7 +506,7 @@ class MainActivityTest {
 
         val appCompatTextView = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("mauAcau"),
+                withId(R.id.prevNoteView), withText("mauAcau"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -542,7 +521,7 @@ class MainActivityTest {
 
         val appCompatTextView2 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("leAlilu1"),
+                withId(R.id.prevNoteView), withText("leAlilu1"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -557,7 +536,7 @@ class MainActivityTest {
 
         val appCompatTextView3 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("caiPmaimy"),
+                withId(R.id.prevNoteView), withText("caiPmaimy"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -572,7 +551,7 @@ class MainActivityTest {
 
         val appCompatTextView4 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("meAmimu2"),
+                withId(R.id.prevNoteView), withText("meAmimu2"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -684,16 +663,6 @@ class MainActivityTest {
         )
         appCompatSpinner3.perform(click())
 
-        val appCompatCheckedTextView3 = onData(anything())
-            .inAdapterView(
-                childAtPosition(
-                    withClassName(`is`("android.widget.PopupWindow$PopupBackgroundView")),
-                    0
-                )
-            )
-            .atPosition(0)
-        appCompatCheckedTextView3.perform(click())
-
         val appCompatSpinner4 = onView(
             allOf(
                 withId(R.id.judgeSpinner),
@@ -712,16 +681,6 @@ class MainActivityTest {
         )
         appCompatSpinner4.perform(click())
 
-        val appCompatCheckedTextView4 = onData(anything())
-            .inAdapterView(
-                childAtPosition(
-                    withClassName(`is`("android.widget.PopupWindow$PopupBackgroundView")),
-                    0
-                )
-            )
-            .atPosition(2)
-        appCompatCheckedTextView4.perform(click())
-
         val appCompatButton24 = onView(
             allOf(
                 withText("Enter"),
@@ -739,7 +698,7 @@ class MainActivityTest {
 
         val textView4 = onView(
             allOf(
-                withId(R.id.scoreView), withText("caiPmaimy"),
+                withId(R.id.noteView), withText("caiPmaimy"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -754,7 +713,7 @@ class MainActivityTest {
 
         val textView5 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("meAxeze1"),
+                withId(R.id.prevNoteView), withText("meAxeze1"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -814,7 +773,7 @@ class MainActivityTest {
 
         val appCompatTextView5 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("mauAcau"),
+                withId(R.id.prevNoteView), withText("mauAcau"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -829,7 +788,7 @@ class MainActivityTest {
 
         val appCompatTextView6 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("leAlilu1"),
+                withId(R.id.prevNoteView), withText("leAlilu1"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -844,7 +803,7 @@ class MainActivityTest {
 
         val appCompatTextView7 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("caiPmaimy"),
+                withId(R.id.prevNoteView), withText("caiPmaimy"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -859,7 +818,7 @@ class MainActivityTest {
 
         val appCompatTextView8 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("meAxeze1"),
+                withId(R.id.prevNoteView), withText("meAxeze1"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -874,7 +833,7 @@ class MainActivityTest {
 
         val appCompatTextView9 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("naiPny"),
+                withId(R.id.prevNoteView), withText("naiPny"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -904,7 +863,7 @@ class MainActivityTest {
 
         val textView6 = onView(
             allOf(
-                withId(R.id.prevScoreView), withText("naiPny"),
+                withId(R.id.prevNoteView), withText("naiPny"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -919,7 +878,7 @@ class MainActivityTest {
 
         val textView7 = onView(
             allOf(
-                withId(R.id.scoreView), withText("meAxeze1"),
+                withId(R.id.noteView), withText("meAxeze1"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),

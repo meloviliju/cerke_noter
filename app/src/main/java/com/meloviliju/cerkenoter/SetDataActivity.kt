@@ -1,4 +1,4 @@
-package com.schwert398.cerkenoter
+package com.meloviliju.cerkenoter
 
 import android.app.Activity
 import android.content.Intent
@@ -18,6 +18,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class SetDataActivity : AppCompatActivity() {
+    private var redPlayerName = ""
+    private var blackPlayerName = ""
     private var first = ""
     private var season = ""
 
@@ -26,6 +28,12 @@ class SetDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_data)
+        toast(redPlayerName)
+        toast(blackPlayerName)
+        if (redPlayerName != "" && blackPlayerName != ""){
+            redPlayerNameView.setText(intent.getCharSequenceExtra(MainActivity().extraRedKey))
+            blackPlayerNameView.setText(intent.getCharSequenceExtra(MainActivity().extraBlackKey))
+        }
         initSpinners()
     }
 
@@ -65,7 +73,11 @@ class SetDataActivity : AppCompatActivity() {
         when (view) {
             outputButton -> outputNote()
             resetButton ->{
-                setResult(Activity.RESULT_OK, Intent())
+                intent = Intent().apply {
+                    putExtra(MainActivity().extraRedKey, redPlayerName)
+                    putExtra(MainActivity().extraBlackKey, blackPlayerName)
+                }
+                setResult(Activity.RESULT_OK, intent)
                 finish()
             }
         }
@@ -88,8 +100,8 @@ class SetDataActivity : AppCompatActivity() {
     }
 
     private fun shapeNoteData(): String? {
-        val redPlayerName = redPlayerNameView.text.toString()
-        val blackPlayerName = blackPlayerNameView.text.toString()
+        redPlayerName = redPlayerNameView.text.toString()
+        blackPlayerName = blackPlayerNameView.text.toString()
         val hands = handsEditView.text.toString()
         val noteArrayList = intent.getStringArrayListExtra(MainActivity().extraNoteKey)
 
@@ -101,7 +113,11 @@ class SetDataActivity : AppCompatActivity() {
             return null
         }
 
-        noteArrayList[noteArrayList.lastIndex] = "${noteArrayList.lastOrNull()}=$hands"
+        if (noteArrayList.size == 0){
+            noteArrayList.add(hands)
+        } else {
+            noteArrayList[noteArrayList.lastIndex] = "${noteArrayList.lastOrNull()}=$hands"
+        }
         val data = DataClass(
             blackPlayerName, redPlayerName,
             first, season,
